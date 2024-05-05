@@ -1,6 +1,6 @@
 {
   "name": "rtn_my_library",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "private": false,
   "description": "react native turbo module 템플릿 입니다.",
   "react-native": "js/index",
@@ -14,6 +14,7 @@
     "!android/app/src/main/java/**/MainActivity.kt",
     "!android/app/src/main/java/**/MainApplication.kt",
     "!android/gradle.properties",
+    "!android/build.gradle",
     "!android/gradlew",
     "!android/gradlew.bat",
     "!android/settings.gradle",
