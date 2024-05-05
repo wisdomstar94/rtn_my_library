@@ -1,6 +1,6 @@
 {
   "name": "rtn_my_library",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": false,
   "description": "react native turbo module 템플릿 입니다.",
   "react-native": "js/index",
@@ -10,6 +10,7 @@
     "android",
     "ios",
     "rtn_my_library.podspec",
+    "dispose.sh",
     "!android/app/src/main/java/**/MainActivity.kt",
     "!android/app/src/main/java/**/MainApplication.kt",
     "!android/gradle.properties",
