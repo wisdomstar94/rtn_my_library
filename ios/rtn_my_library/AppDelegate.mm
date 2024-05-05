@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
 
 #import <React/RCTBundleURLProvider.h>
+#import "RTNMyLibrary.h"
 
 @implementation AppDelegate
 
@@ -11,6 +12,13 @@
   // They will be passed down to the ViewController used by React Native.
   self.initialProps = @{};
 
+  RTNMyLibrary* lib = [[RTNMyLibrary alloc] init];
+  [lib getDeviceModel:^(id result) {
+    NSLog(@"test ::: %@", result);
+  } reject:^(NSString *code, NSString *message, NSError *error) {
+    // ...
+  }];
+  
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 

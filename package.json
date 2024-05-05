@@ -9,7 +9,17 @@
     "js",
     "android",
     "ios",
-    "rtn_my_library.podspec"
+    "rtn_my_library.podspec",
+    "!android/app/src/main/java/**/MainActivity.kt",
+    "!android/app/src/main/java/**/MainApplication.kt",
+    "!android/gradle.properties",
+    "!android/gradlew",
+    "!android/gradlew.bat",
+    "!android/settings.gradle",
+    "!android/gradle",
+    "!ios/*Tests",
+    "!ios/*/main.m",
+    "!ios/*/AppDelegate*"
   ],
   "keywords": ["react-native", "ios", "android", "library", "test", "turbo", "module"],
   "repository": "https://github.com/wisdomstar94/rtn_my_library",
