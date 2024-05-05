@@ -1,7 +1,7 @@
 {
   "name": "rtn_my_library",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.0.2",
+  "private": false,
   "description": "react native turbo module 템플릿 입니다.",
   "react-native": "js/index",
   "source": "js/index",
@@ -23,6 +23,10 @@
   ],
   "keywords": ["react-native", "ios", "android", "library", "test", "turbo", "module"],
   "repository": "https://github.com/wisdomstar94/rtn_my_library",
+  "bugs": {
+    "url": "https://github.com/wisdomstar94/rtn_my_library/issues"
+  },
+  "homepage": "https://github.com/wisdomstar94/rtn_my_library#readme",
   "author": "wisdomstar94@gmail.com",
   "license": "MIT",
   "scripts": {
