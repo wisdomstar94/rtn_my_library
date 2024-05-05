@@ -1,6 +1,6 @@
 {
   "name": "rtn_my_library",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "private": false,
   "description": "react native turbo module 템플릿 입니다.",
   "react-native": "js/index",
@@ -44,7 +44,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "postinstall": "sh dispose.sh"
+    "postinstall": "node ./dispose.js"
   },
   "peerDependencies": {
     "react": "*",
