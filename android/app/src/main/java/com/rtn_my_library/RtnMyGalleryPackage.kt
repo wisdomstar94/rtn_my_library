@@ -21,7 +21,7 @@ class RtnMyGalleryPackage : TurboReactPackage() {
             RtnMyGalleryModule.NAME to ReactModuleInfo(
                 RtnMyGalleryModule.NAME,
                 RtnMyGalleryModule.NAME,
-                false, // canOverrideExistingModule
+                true, // canOverrideExistingModule
                 false, // needsEagerInit
                 false, // isCxxModule
                 true, // isTurboModule

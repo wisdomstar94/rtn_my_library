@@ -21,7 +21,7 @@ class RtnMyLibraryPackage : TurboReactPackage() {
             RtnMyLibraryModule.NAME to ReactModuleInfo(
                 RtnMyLibraryModule.NAME,
                 RtnMyLibraryModule.NAME,
-                false, // canOverrideExistingModule
+                true, // canOverrideExistingModule
                 false, // needsEagerInit
                 false, // isCxxModule
                 true, // isTurboModule
