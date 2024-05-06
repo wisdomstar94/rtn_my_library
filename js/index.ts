@@ -1,2 +1,2 @@
-export { gallery } from './NativeRtnMyGallery';
-export { library } from './NativeRtnMyLibrary';
+export * as gallery from './NativeRtnMyGallery';
+export * as library from './NativeRtnMyLibrary';
