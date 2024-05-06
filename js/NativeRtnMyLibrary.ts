@@ -1,13 +1,8 @@
 import { TurboModule, TurboModuleRegistry } from "react-native";
 
-interface RequestGalleryImageResult {
-  isSuccess?: boolean;
-  imageUri?: string;
-}
-
 export interface Spec extends TurboModule {
   getDeviceModel(): Promise<string>;
-  requestGalleryImage(): Promise<RequestGalleryImageResult>;
+  requestGalleryImage(): Promise<string>;
 }
 
 // export const library = TurboModuleRegistry.get<Spec>("RTNMyLibrary") as Spec | null;

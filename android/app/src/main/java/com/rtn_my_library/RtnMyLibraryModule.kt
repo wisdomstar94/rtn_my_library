@@ -2,6 +2,7 @@ package com.rtn_my_library
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.Activity.RESULT_OK
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -23,11 +24,13 @@ class RtnMyLibraryModule(reactContext: ReactApplicationContext?) : NativeRtnMyLi
             intent: Intent?
         ) {
             Log.v("my_tag_a", "requestCode : $requestCode")
-            if (requestCode == 3000) {
+            if (requestCode == 3000 && resultCode == RESULT_OK) {
                 val imageUri = intent?.data
                 val imagePath = uri2path(reactApplicationContext, imageUri)
                 Log.v("my_tag_a", imagePath)
                 globalPromise?.resolve(imagePath)
+            } else {
+                globalPromise?.resolve("");
             }
         }
     }
