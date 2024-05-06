@@ -1,6 +1,6 @@
 {
   "name": "rtn_my_library",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "private": false,
   "description": "react native turbo module 템플릿 입니다.",
   "react-native": "js/index",
