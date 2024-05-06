@@ -35,8 +35,11 @@ class MainApplication : Application(), ReactApplication {
   override fun onCreate() {
     super.onCreate()
 
-    val module: RtnMyLibraryModule = RtnMyLibraryModule(null)
-    module.getDeviceModel(null);
+//    val module: RtnMyLibraryModule = RtnMyLibraryModule(null)
+//    module.getDeviceModel(null)
+
+//    val module: RtnMyGalleryModule = RtnMyGalleryModule(null)
+//    module.requestGalleryImage(null)
 
     SoLoader.init(this, false)
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
