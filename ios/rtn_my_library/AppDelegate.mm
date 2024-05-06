@@ -2,6 +2,7 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import "RTNMyLibrary.h"
+//#import "ImagePickerManager.h"
 
 @implementation AppDelegate
 
@@ -18,6 +19,12 @@
   } reject:^(NSString *code, NSString *message, NSError *error) {
     // ...
   }];
+  
+//  [ImagePickerManager.store getGallery:self pickImageHandler:^(UIImage * image) {
+//     //get image
+//  } cancelHandler:^{
+//      //user cancel
+//  }];
   
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }

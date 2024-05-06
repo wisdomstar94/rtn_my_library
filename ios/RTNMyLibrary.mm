@@ -1,5 +1,6 @@
 #import "RTNMyLibrary.h"
 #import <sys/utsname.h>
+#import "ImagePickerManager.h"
 
 @implementation RTNMyLibrary
 
@@ -11,6 +12,19 @@ RCT_EXPORT_MODULE()
     uname(&systemInfo);
     NSString* code = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
     resolve(code);
+}
+
+-(void)requestGalleryImage:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
+  
+  [ImagePickerManager.store getGallery:[[UIImagePickerController alloc] init] pickImageHandler:^(UIImage * image) {
+    //get image
+    resolve(@"success");
+  } cancelHandler:^{
+    //user cancel
+    resolve(@"cancel");
+  }];
+  
+  resolve(@"");
 }
 
 -(std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
