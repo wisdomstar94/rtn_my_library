@@ -15,16 +15,13 @@ RCT_EXPORT_MODULE()
 }
 
 -(void)requestGalleryImage:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
-  
-  [ImagePickerManager.store getGallery:[[UIImagePickerController alloc] init] pickImageHandler:^(UIImage * image) {
+  [ImagePickerManager.store getGallery:^(UIImage * image) {
     //get image
     resolve(@"success");
   } cancelHandler:^{
     //user cancel
     resolve(@"cancel");
   }];
-  
-  resolve(@"");
 }
 
 -(std::shared_ptr<facebook::react::TurboModule>)getTurboModule:

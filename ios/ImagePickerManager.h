@@ -5,8 +5,7 @@
 
 +(ImagePickerManager*)store;
 
--(void)getGallery:(UIViewController*)viewcontroller
-                    pickImageHandler:(void (^)(UIImage*))pickImageHandler
+-(void)getGallery:(void (^)(UIImage*))pickImageHandler
                     cancelHandler:(void (^)(void))cancelHandler;
 
 -(void)getCamera:(UIViewController*)viewcontroller
