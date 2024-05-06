@@ -4,5 +4,5 @@ export interface Spec extends TurboModule {
   getDeviceModel(): Promise<string>;
 }
 
-export default TurboModuleRegistry.get<Spec>("RTNMyLibrary") as Spec | null;
+export const library = TurboModuleRegistry.get<Spec>("RTNMyLibrary") as Spec | null;
 // export default TurboModuleRegistry.get<Spec>("RTNMyLibrary") as Spec | null;
