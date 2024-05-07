@@ -11,6 +11,7 @@
 
 - (void)chooseImage {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.modalPresentationStyle = UIModalPresentationFullScreen;
     imagePicker.delegate = self;
     imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:imagePicker animated:YES completion:nil];
