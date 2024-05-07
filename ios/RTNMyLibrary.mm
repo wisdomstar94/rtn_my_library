@@ -12,7 +12,7 @@ RCT_EXPORT_MODULE()
     struct utsname systemInfo;
     uname(&systemInfo);
     NSString* code = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
-    NSString *result = [NSString stringWithFormat:@"%@ %@", code, @"v0.0.37"];
+    NSString *result = [NSString stringWithFormat:@"...%@...%@", code, @"v0.0.38"];
     resolve(result);
 }
 
@@ -20,7 +20,7 @@ RCT_EXPORT_MODULE()
     struct utsname systemInfo;
     uname(&systemInfo);
     NSString* code = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
-    NSString *result = [NSString stringWithFormat:@"%@ %@", code, @"v0.0.37"];
+    NSString *result = [NSString stringWithFormat:@"...%@...%@", code, @"v0.0.38"];
     resolve(result);
 }
 
