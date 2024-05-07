@@ -5,8 +5,15 @@
 @implementation ImagePickerControllerViewController
 
 - (void)viewDidLoad {
+    NSLog(@"viewDidLoad!");
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+}
+
+- (BOOL)viewDidAppear {
+    NSLog(@"viewDidAppear!");
+    return YES;
 }
 
 - (void)chooseImage {
@@ -15,6 +22,8 @@
     imagePicker.delegate = self;
     imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:imagePicker animated:YES completion:nil];
+    // [self presentModalViewController:imagePicker animated:YES];
+    // [self.navigationController pushViewController:imagePicker animated:YES];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
