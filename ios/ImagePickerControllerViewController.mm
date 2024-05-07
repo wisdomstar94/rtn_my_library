@@ -1,3 +1,4 @@
+#import <UIKit/UIKit.h>
 #import <Photos/Photos.h>
 #import <Photos/PHPhotoLibrary.h>
 #import "ImagePickerControllerViewController.h"
@@ -9,6 +10,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
 }
 
 - (BOOL)viewDidAppear {
@@ -17,11 +19,15 @@
 }
 
 - (void)chooseImage {
+    UIViewController *uvc = [[[UIApplication sharedApplication] delegate].window rootViewController];
+  
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.modalPresentationStyle = UIModalPresentationFullScreen;
     imagePicker.delegate = self;
     imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    [self presentViewController:imagePicker animated:YES completion:nil];
+    // [self presentViewController:imagePicker animated:YES completion:nil];
+    [uvc presentViewController:imagePicker animated:YES completion:nil];
+  
     // [self presentModalViewController:imagePicker animated:YES];
     // [self.navigationController pushViewController:imagePicker animated:YES];
 }
