@@ -1,7 +1,6 @@
 #import "RTNMyLibrary.h"
 #import <sys/utsname.h>
 #import "ImagePickerControllerViewController.h"
-#import <Photos/Photos.h>
 
 @interface RTNMyLibrary ()
 

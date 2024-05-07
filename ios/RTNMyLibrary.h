@@ -1,3 +1,4 @@
+#import <Photos/Photos.h>
 #import <RTNMyLibrarySpec/RTNMyLibrarySpec.h>
 
 NS_ASSUME_NONNULL_BEGIN
