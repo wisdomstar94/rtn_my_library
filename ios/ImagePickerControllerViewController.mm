@@ -30,7 +30,8 @@
     // [uvc presentViewController:imagePicker animated:YES completion:nil];
     // [uvc presentViewController:imagePicker animated:YES completion:nil];
     UIViewController *root = RCTPresentedViewController();
-    [root presentViewController:imagePicker animated:YES completion:nil];
+    // [root presentViewController:imagePicker animated:YES completion:nil];
+    [root.navigationController pushViewController:imagePicker animated:YES];
   
     // [self presentModalViewController:imagePicker animated:YES];
     // [self.navigationController pushViewController:imagePicker animated:YES];
