@@ -16,6 +16,8 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9CA229D2C0461AE009983A29 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = DA831C3919DF9397129E5304 /* PrivacyInfo.xcprivacy */; };
 		AC31C5422BE9ED38008CC700 /* ImagePickerControllerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AC31C5412BE9ED38008CC700 /* ImagePickerControllerViewController.mm */; };
+		AC31C54D2BEA0F6E008CC700 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC31C54C2BEA0F6E008CC700 /* Photos.framework */; };
+		AC31C54F2BEA0F76008CC700 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC31C54E2BEA0F76008CC700 /* PhotosUI.framework */; };
 		ACD2AA482BE74C4400FEAA23 /* RTNMyLibrary.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACD2AA472BE74C4400FEAA23 /* RTNMyLibrary.mm */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		89C6BE57DB24E9ADA2F236DE /* Pods-rtn_my_library-rtn_my_libraryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rtn_my_library-rtn_my_libraryTests.release.xcconfig"; path = "Target Support Files/Pods-rtn_my_library-rtn_my_libraryTests/Pods-rtn_my_library-rtn_my_libraryTests.release.xcconfig"; sourceTree = "<group>"; };
 		AC31C5402BE9EC7E008CC700 /* ImagePickerControllerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagePickerControllerViewController.h; sourceTree = "<group>"; };
 		AC31C5412BE9ED38008CC700 /* ImagePickerControllerViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ImagePickerControllerViewController.mm; sourceTree = "<group>"; };
+		AC31C54C2BEA0F6E008CC700 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		AC31C54E2BEA0F76008CC700 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		ACD2AA472BE74C4400FEAA23 /* RTNMyLibrary.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RTNMyLibrary.mm; sourceTree = "<group>"; };
 		ACD2AA492BE74C5D00FEAA23 /* RTNMyLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTNMyLibrary.h; sourceTree = "<group>"; };
 		DA831C3919DF9397129E5304 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = rtn_my_library/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C80B921A6F3F58F76C31292 /* libPods-rtn_my_library.a in Frameworks */,
+				AC31C54D2BEA0F6E008CC700 /* Photos.framework in Frameworks */,
+				AC31C54F2BEA0F76008CC700 /* PhotosUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +120,8 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AC31C54E2BEA0F76008CC700 /* PhotosUI.framework */,
+				AC31C54C2BEA0F6E008CC700 /* Photos.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				5DCACB8F33CDC322A6C60F78 /* libPods-rtn_my_library.a */,
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-rtn_my_library-rtn_my_libraryTests.a */,
