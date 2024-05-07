@@ -15,13 +15,37 @@ RCT_EXPORT_MODULE()
 }
 
 -(void)requestGalleryImage:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
-  [ImagePickerManager.store getGallery:^(UIImage * image) {
-    //get image
-    resolve(@"success");
-  } cancelHandler:^{
-    //user cancel
-    resolve(@"cancel");
-  }];
+  [self selectImage];
+//  [ImagePickerManager.store getGallery:^(UIImage * image) {
+//    //get image
+//    resolve(@"success");
+//  } cancelHandler:^{
+//    //user cancel
+//    resolve(@"cancel");
+//  }];
+}
+
+- (void)selectImage {
+    self.imagePicker = [[UIImagePickerController alloc] init];
+    self.imagePicker.delegate = self;
+    self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    UIViewController *rootViewController = self.window.rootViewController;
+    [rootViewController presentViewController:self.imagePicker animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
+    UIImage *selectedImage = info[UIImagePickerControllerOriginalImage];
+    NSURL *imageUrl = info[UIImagePickerControllerImageURL];
+    
+    NSLog(@"Selected Image: %@", selectedImage);
+    NSLog(@"Image URL: %@", imageUrl);
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(std::shared_ptr<facebook::react::TurboModule>)getTurboModule:

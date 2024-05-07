@@ -28,11 +28,11 @@ static ImagePickerManager *_store;
 }
 
 //앨범에서 가저오기
--(void)getGallery:(void (^)(UIImage*))pickImageHandler cancelHandler:(void (^)(void))cancelHandler {
+-(void)getGallery:(UIViewController*)viewcontroller pickImageHandler:(void (^)(UIImage*))pickImageHandler cancelHandler:(void (^)(void))cancelHandler {
     self->pickImageHandler = pickImageHandler;
     self->cancelHandler = cancelHandler;
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    [picker presentViewController:picker animated:true completion:nil];
+    [viewcontroller presentViewController:picker animated:true completion:nil];
 }
 //카메라에서 가저오기
 -(void)getCamera:(UIViewController*)viewcontroller pickImageHandler:(void (^)(UIImage*))pickImageHandler cancelHandler:(void (^)(void))cancelHandler {
