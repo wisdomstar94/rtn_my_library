@@ -1,3 +1,5 @@
+#import <Photos/Photos.h>
+#import <Photos/PHPhotoLibrary.h>
 #import "ImagePickerControllerViewController.h"
 
 @interface ImagePickerControllerViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>

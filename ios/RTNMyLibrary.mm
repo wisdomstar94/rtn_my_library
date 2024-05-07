@@ -1,3 +1,5 @@
+#import <Photos/Photos.h>
+#import <Photos/PHPhotoLibrary.h>
 #import "RTNMyLibrary.h"
 #import <sys/utsname.h>
 #import "ImagePickerControllerViewController.h"
