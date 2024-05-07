@@ -1,3 +1,4 @@
+#import <UIKit/UIKit.h>
 #import <Photos/Photos.h>
 #import <Photos/PHPhotoLibrary.h>
 #import <PhotosUI/PhotosUI.h>
@@ -46,7 +47,7 @@ RCT_EXPORT_MODULE()
     struct utsname systemInfo;
     uname(&systemInfo);
     NSString* code = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
-    NSString *result = [NSString stringWithFormat:@"...%@...%@", code, @"v0.0.44"];
+    NSString *result = [NSString stringWithFormat:@"...%@...%@", code, @"v0.0.46"];
     resolve(result);
 }
 
@@ -66,17 +67,16 @@ RCT_EXPORT_MODULE()
     case PHAuthorizationStatusLimited:
       {
         // 권한이 허용되었을 때만 갤러리를 엽니다.
-        ImagePickerControllerViewController* imagePickerController = [[ImagePickerControllerViewController alloc] init];
-        // self.imagePickerController = [[ImagePickerControllerViewController alloc] init];
-        // __weak __typeof__(self) weakSelf = self;
-        imagePickerController.imageSelectionCallback = ^(NSDictionary *imageInfo) {
+        self.imagePickerController = [[ImagePickerControllerViewController alloc] init];
+         __weak __typeof__(self) weakSelf = self;
+        self.imagePickerController.imageSelectionCallback = ^(NSDictionary *imageInfo) {
           NSLog(@"Selected Image Info: %@", imageInfo);
           UIImage *selectedImage = imageInfo[UIImagePickerControllerOriginalImage];
           NSURL *imageUrl = imageInfo[UIImagePickerControllerImageURL];
           NSString *uri = [imageUrl absoluteString];
           resolve(uri);
         };
-        [imagePickerController chooseImage];
+        [weakSelf.imagePickerController chooseImage];
       }
       break;
     case PHAuthorizationStatusRestricted:
