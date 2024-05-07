@@ -2,6 +2,7 @@
 #import <Photos/Photos.h>
 #import <Photos/PHPhotoLibrary.h>
 #import "ImagePickerControllerViewController.h"
+#import <React/RCTConvert.h>
 
 @implementation ImagePickerControllerViewController
 
@@ -26,7 +27,10 @@
     imagePicker.delegate = self;
     imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     // [self presentViewController:imagePicker animated:YES completion:nil];
-    [uvc presentViewController:imagePicker animated:YES completion:nil];
+    // [uvc presentViewController:imagePicker animated:YES completion:nil];
+    // [uvc presentViewController:imagePicker animated:YES completion:nil];
+    UIViewController *root = RCTPresentedViewController();
+    [root presentViewController:imagePicker animated:YES completion:nil];
   
     // [self presentModalViewController:imagePicker animated:YES];
     // [self.navigationController pushViewController:imagePicker animated:YES];
