@@ -12,9 +12,6 @@
 
 @implementation RTNMyLibrary
 
-RCT_EXPORT_MODULE()
-
-//#ifdef RCT_NEW_ARCH_ENABLED
 -(void)getDeviceModel:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
     struct utsname systemInfo;
     uname(&systemInfo);
@@ -22,6 +19,7 @@ RCT_EXPORT_MODULE()
     resolve(code);
 }
 
+//#ifdef RCT_NEW_ARCH_ENABLED
 -(void)requestGalleryImage:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
     struct utsname systemInfo;
     uname(&systemInfo);
@@ -82,5 +80,7 @@ RCT_EXPORT_MODULE()
     return std::make_shared<facebook::react::NativeRtnMyLibrarySpecJSI>(params);
 }
 //#endif
+
+RCT_EXPORT_MODULE(RTNMyLibrary)
 
 @end
