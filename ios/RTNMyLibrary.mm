@@ -1,5 +1,6 @@
 #import <Photos/Photos.h>
 #import <Photos/PHPhotoLibrary.h>
+#import <PhotosUI/PhotosUI.h>
 #import "RTNMyLibrary.h"
 #import <sys/utsname.h>
 #import "ImagePickerControllerViewController.h"
@@ -10,7 +11,6 @@ RCT_EXPORT_MODULE()
 
 -(void)requestGalleryImage:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
   PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
-//  resolve(@"왜..?");
   switch (status) {
     case PHAuthorizationStatusAuthorized:
       {
@@ -46,7 +46,7 @@ RCT_EXPORT_MODULE()
     struct utsname systemInfo;
     uname(&systemInfo);
     NSString* code = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
-    NSString *result = [NSString stringWithFormat:@"...%@...%@", code, @"v0.0.43"];
+    NSString *result = [NSString stringWithFormat:@"...%@...%@", code, @"v0.0.44"];
     resolve(result);
 }
 
