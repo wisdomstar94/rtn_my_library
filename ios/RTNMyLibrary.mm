@@ -4,13 +4,15 @@
 #import <sys/utsname.h>
 #import "ImagePickerControllerViewController.h"
 
-@interface RTNMyLibrary ()
-
-@property (nonatomic, strong) ImagePickerControllerViewController *imagePickerController;
-
-@end
+//@interface RTNMyLibrary ()
+//
+//@property (nonatomic, strong) ImagePickerControllerViewController *imagePickerController;
+//
+//@end
 
 @implementation RTNMyLibrary
+
+RCT_EXPORT_MODULE()
 
 -(void)getDeviceModel:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
     struct utsname systemInfo;
@@ -19,7 +21,6 @@
     resolve(code);
 }
 
-//#ifdef RCT_NEW_ARCH_ENABLED
 -(void)requestGalleryImage:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
     struct utsname systemInfo;
     uname(&systemInfo);
@@ -69,18 +70,10 @@
 //    }
 }
 
-//- (void)handleImageSelection:(NSDictionary *)imageInfo {
-//    // Handle selected image info here
-//    NSLog(@"Selected Image Info: %@", imageInfo);
-//}
-
 -(std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
     (const facebook::react::ObjCTurboModule::InitParams &)params
 {
     return std::make_shared<facebook::react::NativeRtnMyLibrarySpecJSI>(params);
 }
-//#endif
-
-RCT_EXPORT_MODULE(RTNMyLibrary)
 
 @end
