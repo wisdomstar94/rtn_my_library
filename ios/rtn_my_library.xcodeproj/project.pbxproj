@@ -15,7 +15,7 @@
 		7699B88040F8A987B510C191 /* libPods-rtn_my_library-rtn_my_libraryTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-rtn_my_library-rtn_my_libraryTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9CA229D2C0461AE009983A29 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = DA831C3919DF9397129E5304 /* PrivacyInfo.xcprivacy */; };
-		AC31C53C2BE8CC55008CC700 /* ImagePickerManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = AC31C53B2BE8CC55008CC700 /* ImagePickerManager.mm */; };
+		AC31C5422BE9ED38008CC700 /* ImagePickerControllerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AC31C5412BE9ED38008CC700 /* ImagePickerControllerViewController.mm */; };
 		ACD2AA482BE74C4400FEAA23 /* RTNMyLibrary.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACD2AA472BE74C4400FEAA23 /* RTNMyLibrary.mm */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +47,8 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-rtn_my_library.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rtn_my_library.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = rtn_my_library/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-rtn_my_library-rtn_my_libraryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rtn_my_library-rtn_my_libraryTests.release.xcconfig"; path = "Target Support Files/Pods-rtn_my_library-rtn_my_libraryTests/Pods-rtn_my_library-rtn_my_libraryTests.release.xcconfig"; sourceTree = "<group>"; };
-		AC31C53A2BE8CC34008CC700 /* ImagePickerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagePickerManager.h; sourceTree = "<group>"; };
-		AC31C53B2BE8CC55008CC700 /* ImagePickerManager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ImagePickerManager.mm; sourceTree = "<group>"; };
+		AC31C5402BE9EC7E008CC700 /* ImagePickerControllerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagePickerControllerViewController.h; sourceTree = "<group>"; };
+		AC31C5412BE9ED38008CC700 /* ImagePickerControllerViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ImagePickerControllerViewController.mm; sourceTree = "<group>"; };
 		ACD2AA472BE74C4400FEAA23 /* RTNMyLibrary.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RTNMyLibrary.mm; sourceTree = "<group>"; };
 		ACD2AA492BE74C5D00FEAA23 /* RTNMyLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTNMyLibrary.h; sourceTree = "<group>"; };
 		DA831C3919DF9397129E5304 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = rtn_my_library/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -105,8 +105,8 @@
 				DA831C3919DF9397129E5304 /* PrivacyInfo.xcprivacy */,
 				ACD2AA472BE74C4400FEAA23 /* RTNMyLibrary.mm */,
 				ACD2AA492BE74C5D00FEAA23 /* RTNMyLibrary.h */,
-				AC31C53A2BE8CC34008CC700 /* ImagePickerManager.h */,
-				AC31C53B2BE8CC55008CC700 /* ImagePickerManager.mm */,
+				AC31C5402BE9EC7E008CC700 /* ImagePickerControllerViewController.h */,
+				AC31C5412BE9ED38008CC700 /* ImagePickerControllerViewController.mm */,
 			);
 			name = rtn_my_library;
 			sourceTree = "<group>";
@@ -411,7 +411,7 @@
 				ACD2AA482BE74C4400FEAA23 /* RTNMyLibrary.mm in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				AC31C53C2BE8CC55008CC700 /* ImagePickerManager.mm in Sources */,
+				AC31C5422BE9ED38008CC700 /* ImagePickerControllerViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

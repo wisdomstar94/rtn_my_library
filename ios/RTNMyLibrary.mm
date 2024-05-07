@@ -1,6 +1,12 @@
 #import "RTNMyLibrary.h"
 #import <sys/utsname.h>
-#import "ImagePickerManager.h"
+#import "ImagePickerControllerViewController.h"
+
+@interface RTNMyLibrary ()
+
+@property (nonatomic, strong) ImagePickerControllerViewController *imagePickerController;
+
+@end
 
 @implementation RTNMyLibrary
 
@@ -15,7 +21,16 @@ RCT_EXPORT_MODULE()
 }
 
 -(void)requestGalleryImage:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
-  [self selectImage];
+  self.imagePickerController = [[ImagePickerControllerViewController alloc] init];
+  __weak __typeof__(self) weakSelf = self;
+  self.imagePickerController.imageSelectionCallback = ^(NSDictionary *imageInfo) {
+    NSLog(@"Selected Image Info: %@", imageInfo);
+    resolve(@"success");
+//    [weakSelf handleImageSelection:imageInfo];
+  };
+  [self.imagePickerController chooseImage];
+  
+//  [self selectImage];
 //  [ImagePickerManager.store getGallery:^(UIImage * image) {
 //    //get image
 //    resolve(@"success");
@@ -25,28 +40,10 @@ RCT_EXPORT_MODULE()
 //  }];
 }
 
-- (void)selectImage {
-    self.imagePicker = [[UIImagePickerController alloc] init];
-    self.imagePicker.delegate = self;
-    self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    
-    UIViewController *rootViewController = self.window.rootViewController;
-    [rootViewController presentViewController:self.imagePicker animated:YES completion:nil];
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
-    UIImage *selectedImage = info[UIImagePickerControllerOriginalImage];
-    NSURL *imageUrl = info[UIImagePickerControllerImageURL];
-    
-    NSLog(@"Selected Image: %@", selectedImage);
-    NSLog(@"Image URL: %@", imageUrl);
-    
-    [picker dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [picker dismissViewControllerAnimated:YES completion:nil];
-}
+//- (void)handleImageSelection:(NSDictionary *)imageInfo {
+//    // Handle selected image info here
+//    NSLog(@"Selected Image Info: %@", imageInfo);
+//}
 
 -(std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
     (const facebook::react::ObjCTurboModule::InitParams &)params

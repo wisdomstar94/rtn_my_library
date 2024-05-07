@@ -2,10 +2,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RTNMyLibrary : NSObject <NativeRtnMyLibrarySpec, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, strong) UIImagePickerController *imagePicker;
+@interface RTNMyLibrary : NSObject <NativeRtnMyLibrarySpec>
 
 -(void)getDeviceModel:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject;
 -(void)requestGalleryImage:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject;
