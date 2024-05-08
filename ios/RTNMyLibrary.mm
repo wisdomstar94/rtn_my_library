@@ -10,6 +10,7 @@
 
 RCT_EXPORT_MODULE()
 
+// override
 -(void)requestGalleryImage:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
   PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
   switch (status) {
@@ -43,12 +44,19 @@ RCT_EXPORT_MODULE()
   }
 }
 
+// override
 -(void)getDeviceModel:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
     struct utsname systemInfo;
     uname(&systemInfo);
     NSString* code = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
-    NSString *result = [NSString stringWithFormat:@"...%@...%@", code, @"v0.0.50"];
+    NSString *result = [NSString stringWithFormat:@"%@", code];
     resolve(result);
+}
+
+// override
+-(void)getRtnMyLibraryVersion:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
+  NSString *result = [NSString stringWithFormat:@"%@", @"v0.0.52"];
+  resolve(result);
 }
 
 - (void)checkWithResolver:(RCTPromiseResolveBlock _Nonnull)resolve

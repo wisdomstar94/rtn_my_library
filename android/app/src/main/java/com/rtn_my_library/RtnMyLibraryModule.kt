@@ -66,6 +66,10 @@ class RtnMyLibraryModule(reactContext: ReactApplicationContext?) : NativeRtnMyLi
         this.reactApplicationContext.currentActivity?.startActivityForResult(intent, 3000)
     }
 
+    override fun getRtnMyLibraryVersion(promise: Promise?) {
+        promise?.resolve("v0.0.52")
+    }
+
     companion object {
         const val NAME = "RTNMyLibrary"
     }
