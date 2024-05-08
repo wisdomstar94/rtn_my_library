@@ -3,52 +3,57 @@
 #import <Photos/PHPhotoLibrary.h>
 #import "ImagePickerControllerViewController.h"
 #import <React/RCTConvert.h>
+#import <React/RCTUtils.h>
 
 @implementation ImagePickerControllerViewController
 
 - (void)viewDidLoad {
-    NSLog(@"viewDidLoad!");
+    NSLog(@"[tag_a] viewDidLoad!");
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
 }
 
-- (BOOL)viewDidAppear {
-    NSLog(@"viewDidAppear!");
-    return YES;
-}
+//- (BOOL)viewDidAppear {
+//    NSLog(@"[tag_a] viewDidAppear!");
+//    return YES;
+//}
 
 - (void)chooseImage {
-    UIViewController *uvc = [[[UIApplication sharedApplication] delegate].window rootViewController];
+    // UIViewController *uvc = [[[UIApplication sharedApplication] delegate].window rootViewController];
+    // UIViewController *root = RCTPresentedViewController();
   
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.modalPresentationStyle = UIModalPresentationFullScreen;
-    imagePicker.delegate = self;
-    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    // [self presentViewController:imagePicker animated:YES completion:nil];
-    // [uvc presentViewController:imagePicker animated:YES completion:nil];
-    // [uvc presentViewController:imagePicker animated:YES completion:nil];
-    UIViewController *root = RCTPresentedViewController();
-    // [root presentViewController:imagePicker animated:YES completion:nil];
-    [root.navigationController pushViewController:imagePicker animated:YES];
-  
-    // [self presentModalViewController:imagePicker animated:YES];
-    // [self.navigationController pushViewController:imagePicker animated:YES];
+    self.imagePicker = [[UIImagePickerController alloc] init];
+    self.imagePicker.modalPresentationStyle = UIModalPresentationAutomatic;
+    self.imagePicker.delegate = self;
+    self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+      UIViewController *root = RCTPresentedViewController();
+      [root presentViewController:self.imagePicker animated:YES completion:nil];
+    });
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    NSLog(@"[tag_a] imagePickerControllerDidCancel called");
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey, id> *)info {
-    UIImage *selectedImage = info[UIImagePickerControllerOriginalImage];
-    NSMutableDictionary *imageInfo = [NSMutableDictionary dictionary];
-    [imageInfo setObject:selectedImage forKey:@"image"];
+    NSLog(@"[tag_a] imagePickerController called");
+//    UIImage *selectedImage = info[UIImagePickerControllerOriginalImage];
+//    NSMutableDictionary *imageInfo = [NSMutableDictionary dictionary];
+//    [imageInfo setObject:selectedImage forKey:@"image"];
     if (self.imageSelectionCallback) {
-        self.imageSelectionCallback(imageInfo);
+        self.imageSelectionCallback(info);
     }
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
+
+//-(void)addChildViewController:(UIViewController *)childController {
+//    // [super addChildViewController:<#childController#>]
+//    [self addChildViewController:childController];
+//    [self.view addSubview:childController.view];
+//    [childController didMoveToParentViewController:self];
+//}
 
 @end

@@ -4,7 +4,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ImagePickerControllerViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@property (nonatomic, copy) void (^imageSelectionCallback)(NSDictionary *imageInfo);
+@property (nonatomic, strong) UIImagePickerController *imagePicker;
+@property (nonatomic, copy) void (^imageSelectionCallback)(NSDictionary *info);
 
 - (void)chooseImage;
 

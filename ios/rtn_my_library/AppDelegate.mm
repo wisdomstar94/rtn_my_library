@@ -82,23 +82,22 @@
     case PHAuthorizationStatusLimited:
       {
         // 권한이 허용되었을 때만 갤러리를 엽니다.
-        NSLog(@"dispatch_async before");
-        dispatch_async(dispatch_get_main_queue(), ^{
-          NSLog(@"dispatch_async after");
-          ImagePickerControllerViewController* imagePickerController = [[ImagePickerControllerViewController alloc] init];
-          imagePickerController.imageSelectionCallback = ^(NSDictionary *imageInfo) {
-            NSLog(@"Selected Image Info: %@", imageInfo);
-            UIImage *selectedImage = imageInfo[UIImagePickerControllerOriginalImage];
-            NSURL *imageUrl = imageInfo[UIImagePickerControllerImageURL];
-            NSString *uri = [imageUrl absoluteString];
-          };
-          [imagePickerController chooseImage];
-        });
+        self.imagePickerController = [[ImagePickerControllerViewController alloc] init];
+         __weak __typeof__(self) weakSelf = self;
+        self.imagePickerController.imageSelectionCallback = ^(NSDictionary *info) {
+          NSLog(@"[tag_a] Selected Image Info: %@", info);
+          NSURL *imageURL = info[UIImagePickerControllerImageURL];
+          NSLog(@"[tag_a] imageURL: %@", imageURL);
+          NSString *uri = [imageURL absoluteString];
+          NSLog(@"[tag_a] uri: %@", uri);
+          // resolve(uri);
+        };
+        [weakSelf.imagePickerController chooseImage];
       }
       break;
     case PHAuthorizationStatusRestricted:
     case PHAuthorizationStatusDenied:
-      NSLog(@"permission-deny");
+      NSLog(@"[tag_a] permission-deny");
       break;
     default:
       
