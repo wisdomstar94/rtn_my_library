@@ -67,7 +67,14 @@ class RtnMyLibraryModule(reactContext: ReactApplicationContext?) : NativeRtnMyLi
     }
 
     override fun getRtnMyLibraryVersion(promise: Promise?) {
-        promise?.resolve("v0.0.52")
+        promise?.resolve("v0.0.53")
+    }
+
+    override fun getObjectTest(promise: Promise?) {
+        val obj = DtoObjectTest()
+        obj.name = "홍길동"
+        obj.age = 34
+        promise?.resolve(obj)
     }
 
     companion object {
