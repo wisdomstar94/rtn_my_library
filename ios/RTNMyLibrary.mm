@@ -6,12 +6,12 @@
 #import <sys/utsname.h>
 #import "ImagePickerControllerViewController.h"
 
-@interface DtoObjectTest: NSObject
-
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic) NSNumber *age;
-
-@end
+//@interface DtoObjectTest: NSObject
+//
+//@property (nonatomic, strong) NSString *name;
+//@property (nonatomic) NSNumber *age;
+//
+//@end
 
 @implementation RTNMyLibrary
 
@@ -62,17 +62,17 @@ RCT_EXPORT_MODULE()
 
 // override
 -(void)getRtnMyLibraryVersion:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
-  NSString *result = [NSString stringWithFormat:@"%@", @"v0.0.53"];
+  NSString *result = [NSString stringWithFormat:@"%@", @"v0.0.54"];
   resolve(result);
 }
 
 // override
--(void)getObjectTest:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
-  DtoObjectTest *obj = [[DtoObjectTest alloc] init];
-  obj.name = @"홍길동 ios";
-  obj.age = [NSNumber numberWithInt:45];
-  resolve(obj);
-}
+//-(void)getObjectTest:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
+//  DtoObjectTest *obj = [[DtoObjectTest alloc] init];
+//  obj.name = @"홍길동 ios";
+//  obj.age = [NSNumber numberWithInt:45];
+//  resolve(obj);
+//}
 
 - (void)checkWithResolver:(RCTPromiseResolveBlock _Nonnull)resolve
                  rejecter:(RCTPromiseRejectBlock _Nonnull)reject {

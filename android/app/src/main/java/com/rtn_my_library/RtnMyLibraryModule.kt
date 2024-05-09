@@ -13,7 +13,6 @@ import android.provider.MediaStore
 import android.util.Log
 import com.facebook.react.bridge.ActivityEventListener
 import com.facebook.react.bridge.BaseActivityEventListener
-import java.io.File
 
 class RtnMyLibraryModule(reactContext: ReactApplicationContext?) : NativeRtnMyLibrarySpec(reactContext) {
     private val mActivityEventListener: ActivityEventListener = object : BaseActivityEventListener() {
@@ -67,15 +66,15 @@ class RtnMyLibraryModule(reactContext: ReactApplicationContext?) : NativeRtnMyLi
     }
 
     override fun getRtnMyLibraryVersion(promise: Promise?) {
-        promise?.resolve("v0.0.53")
+        promise?.resolve("v0.0.54")
     }
 
-    override fun getObjectTest(promise: Promise?) {
-        val obj = DtoObjectTest()
-        obj.name = "홍길동"
-        obj.age = 34
-        promise?.resolve(obj)
-    }
+//    override fun getObjectTest(promise: Promise?) {
+//        val obj = DtoObjectTest()
+//        obj.name = "홍길동"
+//        obj.age = 34
+//        promise?.resolve(obj)
+//    }
 
     companion object {
         const val NAME = "RTNMyLibrary"
